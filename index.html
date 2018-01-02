@@ -6,7 +6,30 @@
     </head>
     <body>
         <h1>Search Address</h1><br>
-        <input type="text" id="search" width="150" height="45"><br>
+        <form>
+        <label>Address</label><br>
+        <input type="text" id="address" width="150" height="45"><br>
+        <label>City</label>
+        <input type="text" id="city">
+        <label>State</label>
+        <input type="text" id="state">
+        <label>Zipcode</label><br>
+        <input type="number" id="zipcode" width="150" height="45"><br>
+        <label>Square Ft</label><br>
+        <input type="number" id="sqft" width="150" height="45"><br>
+        <label># of Bedrooms</label>
+        <input type="number" id="beds" width="150" height="45">
+        <label># of Baths</label>      
+        <input type="number" id="baths" width="150" height="45">
+        <br>
+        <label>Property Type [1 for home; 2 for condo/appt/townhome]</label><br>
+        <input type="number" id="property">
+        </form>
+
+
+
+
+
         <button class="btn btn-default" id="submit">Submit</button>
         <div class="display box">
             <p id="zillow-display"></p>
