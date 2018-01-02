@@ -32,7 +32,7 @@ function zillowAPI(address,state,city) {
         }
     });
 };
-//&City=Boulder&State=CO&Zipcode=80305&Beds=3&Baths=3&YearBuilt=1999&Sqft=1200&Lat=40.0156810&Lon=-105.27036&PropType=1
+
 function rentRangeAPI(address, zipcode, sqft, bed, bath, city, state, prop){
     let add = address;
     let zip = zipcode;
