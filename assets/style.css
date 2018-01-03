@@ -1,12 +1,13 @@
 .btn{
     background-color: navy;
     color: silver;
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
     border: solid 2px black;
-    height: 35px;
+    height: 45px;
     width: 125px;
     margin: 10px;
+    padding-bottom: 10px;
 
 }
 span{
@@ -20,12 +21,12 @@ span{
 }
 aside{
     border: border-box;
-    border: solid 5px red;
+    border: solid 5px silver;
     padding-left: 25px;
 }
 section {
     border: border-box;
-    border: solid 5px green;
+    border: solid 5px silver;
     padding-left: 25px;
     padding-top: 20px;
 }
