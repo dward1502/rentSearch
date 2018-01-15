@@ -1,6 +1,10 @@
 //calling zillow api  api=X1-ZWz1g5yoogg9or_aau4
 //calling rent range api = b3ce352444676f3a4a72
-
+jQuery.ajaxPrefilter(function (options) {
+    if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+    }
+});
 
 function zillowAPI(address,state,city) {
     let add = address;
@@ -23,6 +27,7 @@ function zillowAPI(address,state,city) {
                 dataType: "xml",
                 success: function (data) {
                     console.log(data);
+                    $("#zillow-display").empty();
                     $(data).find('rentzestimate').each(function () {
                         let rentEst = $(this).find('amount').text();
                         $("#zillow-display").append("$ " + rentEst);
@@ -42,7 +47,7 @@ function rentRangeAPI(address, zipcode, sqft, bed, bath, city, state, prop){
     let cit = city;
     let st = state;
     let property = prop;
-    let queryURL = "https://www.rentrange.com/API/advancedReportAPI.php?Address="+add+"&City="+ cit + "&State="+st+"&Zipcode="+zip+"&Beds="+beds+"&Baths="+baths+"&Sqft="+sft+"&PropType="+property+"&Key=b3ce352444676f3a4a72"
+    let queryURL = "https://www.rentrange.com/API/advancedReportAPI.php?Address="+add+"&City="+ cit + "&State="+st+"&Zipcode="+zip+"&Beds="+beds+"&Baths="+baths+"&Sqft="+sft+"&PropType="+property+"&Key=b3ce352444676f3a4a72&test=test"
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -52,6 +57,7 @@ function rentRangeAPI(address, zipcode, sqft, bed, bath, city, state, prop){
             $(response).find('rentrangeAPI').each(function(){
                 let rentEst = $(this).find('RentEstimate').text();
                 console.log(rentEst);
+                $("#rentRange-display").empty();
                 $("#rentRange-display").append("$ " + rentEst);
             })
         }

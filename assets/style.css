@@ -59,3 +59,24 @@ h1 , label{
     color: navy;
     font-family: 'Times New Roman', Times, serif;
 }
+#add{
+    margin-right:55px;
+}
+#cityLab{
+    margin-right: 80px;
+}
+#stateLab{
+    margin-right: 75px;
+}
+#zip{
+    margin-right: 53px;
+}
+#sq{
+    margin-right: 43px;
+}
+#bednum{
+    margin-right: 10px;
+}
+#bathnum{
+    margin-right: 39px;
+}
